@@ -1,0 +1,42 @@
+User APIs
+GET /users: Retrieve a list of all users.
+GET /users/:user_id: Retrieve a specific user by ID.
+POST /users/signup: Create a new user.
+POST /users/login: Authenticate a user.
+
+Food APIs {token}
+GET /foods: Retrieve a list of all foods.
+GET /foods/:food_id: Retrieve a specific food by ID.
+POST /foods: Create a new food.
+PATCH /foods/:food_id: Update an existing food.
+
+Menu APIs {token}
+GET /menus: Retrieve a list of all menus.
+GET /menus/:menu_id: Retrieve a specific menu by ID.
+POST /menus: Create a new menu.
+PATCH /menus/:menu_id: Update an existing menu.
+
+Table APIs {token}
+GET /tables: Retrieve a list of all tables.
+GET /tables/:table_id: Retrieve a specific table by ID.
+POST /tables: Create a new table.
+PATCH /tables/:table_id: Update an existing table.
+
+Order APIs {token}
+GET /orders: Retrieve a list of all orders.
+GET /orders/:order_id: Retrieve a specific order by ID.
+POST /orders: Create a new order.
+PATCH /orders/:order_id: Update an existing order.
+
+OrderItem APIs {token}
+GET /orderItems: Retrieve a list of all order items.
+GET /orderItems/:orderItem_id: Retrieve a specific order item by ID.
+GET /orderItems-order/:order_id: Retrieve order items for a specific order.
+POST /orderItems: Create a new order item.
+PATCH /orderItems/:orderItem_id: Update an existing order item.
+
+Invoice APIs {token}
+GET /invoices: Retrieve a list of all invoices.
+GET /invoices/:invoice_id: Retrieve a specific invoice by ID.
+POST /invoices: Create a new invoice.
+PATCH /invoices/:invoice_id: Update an existing invoice.

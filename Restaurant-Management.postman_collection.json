@@ -1,0 +1,747 @@
+{
+	"info": {
+		"_postman_id": "8f043435-060e-4c76-ab08-88a9357080e2",
+		"name": "Restaurant-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36779709"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"Bake\",\r\n    \"last_name\": \"Call\",\r\n    \"Password\": \"123456\",\r\n    \"email\": \"bakecall@mail.com\",\r\n    \"phone\": \"1234560987\",\r\n    \"User_type\": \"CUSTOMER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LogIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Password\": \"123456\",\r\n    \"email\": \"johndoe@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/menus",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Menu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Pasta Primavera\",\r\n  \"category\": \"Main Course\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/menus",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Menu",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Vegetarian Pasta Primavera\",\r\n  \"category\": \"Main Course\",\r\n  \"start_date\": \"2024-08-05T00:00:00Z\",\r\n  \"end_date\": \"2024-09-01T23:59:59Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/menus/{menu_id}",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"menus",
+						"{menu_id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Foods in Menus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/foods/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"foods",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Food by ID from Menu",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/foods/66afbb7d03c8c4108315ab8f",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"foods",
+						"66afbb7d03c8c4108315ab8f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Foods to Menu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Burger\",\r\n    \"price\": 5.99,\r\n    \"food_image\": \"burger.jpg\",\r\n    \"menu_id\": \"66afb72e03c8c4108315ab8d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/foods/66afbb7d03c8c4108315ab8f",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"foods",
+						"66afbb7d03c8c4108315ab8f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Food",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cheeseburger\",\r\n    \"price\": 6.49,\r\n    \"food_image\": \"cheeseburger.jpg\",\r\n    \"menu_id\": \"66afb72e03c8c4108315ab8d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/foods/66afbb7d03c8c4108315ab8f",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"foods",
+						"66afbb7d03c8c4108315ab8f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tables",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/tables/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tables",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Table by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/tables/66afbe8803c8c4108315ab90",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tables",
+						"66afbe8803c8c4108315ab90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Table",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number_of_guests\": 4,\r\n  \"table_number\": 12\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/tables",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Table",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number_of_guests\": 6,\r\n    \"table_number\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/tables/66afbe8803c8c4108315ab90",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tables",
+						"66afbe8803c8c4108315ab90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/orders/66afc2561c95cb0ff898c190",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orders",
+						"66afc2561c95cb0ff898c190"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"table_id\": \"66afbe8803c8c4108315ab90\",\r\n  \"items\": [\r\n    {\r\n      \"food_id\": \"66afbb7d03c8c4108315ab8f\",\r\n      \"quantity\": 2\r\n    }\r\n  ],\r\n  \"total_price\": 13.99,\r\n  \"status\": \"pending\",\r\n  \"order_date\": \"2024-08-04T12:00:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Order",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"table_id\": \"66afbe8803c8c4108315ab90\",\r\n  \"items\": [\r\n    {\r\n      \"food_id\": \"66afbb7d03c8c4108315ab8f\",\r\n      \"quantity\": 2\r\n    }\r\n  ],\r\n  \"total_price\": 13.99,\r\n  \"status\": \"completed\",\r\n  \"order_date\": \"2024-08-04T12:00:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/orders/66afc2561c95cb0ff898c190",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orders",
+						"66afc2561c95cb0ff898c190"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Order Items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/orderItems",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orderItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order Items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Table_id\": \"66afbe8803c8c4108315ab90\",\r\n  \"Order_items\": [\r\n    {\r\n      \"Unit_price\": 20.00,\r\n      \"Quantity\": \"L\",\r\n      \"Food_id\": \"66afbb7d03c8c4108315ab8f\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/orderItems",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orderItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order Items",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Table_id\": \"66afbe8803c8c4108315ab90\",\r\n  \"Order_items\": [\r\n    {\r\n      \"Unit_price\": 20.00,\r\n      \"Quantity\": \"S\",\r\n      \"Food_id\": \"66afbb7d03c8c4108315ab8f\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/orderItems/66afc83209416ff1eff33be3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"orderItems",
+						"66afc83209416ff1eff33be3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Invoice",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/invoices/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"invoices",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invoice by ID ❌",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/invoices/66afc564a3e81809cbb618d4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"invoices",
+						"66afc564a3e81809cbb618d4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Invoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"order_id\": \"66afc2561c95cb0ff898c190\",\r\n  \"payment_method\": \"CARD\",\r\n  \"payment_status\": \"PENDING\",\r\n  \"payment_due\": 50.0,\r\n  \"table_number\": \"5\",\r\n  \"payment_due_date\": \"2024-08-05T00:00:00Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/invoices",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Invoice",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImpvaG5kb2VAbWFpbC5jb20iLCJGaXJzdF9uYW1lIjoiSm9obiIsIkxhc3RfbmFtZSI6IkRvZSIsIlVpZCI6IjY2YWY2ODU5NDNmNzBiMDMxYjY4ZTg2ZCIsImV4cCI6MTcyMjg1OTYwOH0.Gp-flQrEsKLgN3YwMH4phcmCWrytPdCR5eYcQOQWdUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"payment_status\": \"COMPLETED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/invoices/66afc564a3e81809cbb618d4",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"invoices",
+						"66afc564a3e81809cbb618d4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
